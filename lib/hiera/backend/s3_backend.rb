@@ -23,7 +23,7 @@ class Hiera
                     Hiera.debug("S3_backend invoked lookup")
                     begin
                         path = File.join(source, key)
-                        answer = s3.buckets[Config[:s3][:bucket]].objects[path].read.strip
+                        answer = Backend.parse_answer(s3.buckets[Config[:s3][:bucket]].objects[path].read.strip, scope)
                     rescue
                         Hiera.debug("Match not found in source " + source)
                     end
