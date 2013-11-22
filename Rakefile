@@ -12,7 +12,7 @@ spec = Gem::Specification.new do |s|
   s.files = FileList["lib/**/*"].to_a
   s.require_path = "lib"
   s.has_rdoc = true
-  s.add_dependency 'aws-sdk'
+  s.add_dependency 'aws-sdk', '1.22.1'
 end
 
 Gem::PackageTask.new(spec) do  |pkg|
